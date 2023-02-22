@@ -31593,11 +31593,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bird2PawnDark (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 4536435121168155498, guid: 8a2a761ceb7db094abc1be7bb28309a7,
-        type: 3}
-      propertyPath: m_TagString
-      value: bird
-      objectReference: {fileID: 0}
     - target: {fileID: 4531610191497753972, guid: 8a2a761ceb7db094abc1be7bb28309a7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -31658,16 +31653,6 @@ PrefabInstance:
       propertyPath: myCohereTarget
       value: 
       objectReference: {fileID: 3975773572888705728}
-    - target: {fileID: 3676507935998348402, guid: 8a2a761ceb7db094abc1be7bb28309a7,
-        type: 3}
-      propertyPath: myTarget
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3676507935998348402, guid: 8a2a761ceb7db094abc1be7bb28309a7,
-        type: 3}
-      propertyPath: angularVelocity
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a2a761ceb7db094abc1be7bb28309a7, type: 3}
 --- !u!4 &871365381 stripped
@@ -33899,7 +33884,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Flock and Blend Steering
+  m_text: Flock, Priority, and Blend Steering
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -33968,10 +33953,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 973625286}
-    characterCount: 24
+    characterCount: 35
     spriteCount: 0
-    spaceCount: 3
-    wordCount: 4
+    spaceCount: 4
+    wordCount: 5
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -60840,11 +60825,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bird1PawnLight
       objectReference: {fileID: 0}
-    - target: {fileID: 463398672271229494, guid: b593ed9d1a409ba46affa1544346dd7f,
-        type: 3}
-      propertyPath: m_TagString
-      value: bird
-      objectReference: {fileID: 0}
     - target: {fileID: 460490904906242974, guid: b593ed9d1a409ba46affa1544346dd7f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -60902,19 +60882,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8891163955208307301, guid: b593ed9d1a409ba46affa1544346dd7f,
         type: 3}
-      propertyPath: myTarget
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8891163955208307301, guid: b593ed9d1a409ba46affa1544346dd7f,
-        type: 3}
       propertyPath: myCohereTarget
       value: 
       objectReference: {fileID: 7243144327889845506}
-    - target: {fileID: 8891163955208307301, guid: b593ed9d1a409ba46affa1544346dd7f,
-        type: 3}
-      propertyPath: angularVelocity
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b593ed9d1a409ba46affa1544346dd7f, type: 3}
 --- !u!1001 &1313278517919255669
@@ -61018,6 +60988,9 @@ GameObject:
   - component: {fileID: 3989271835559614360}
   - component: {fileID: 3998667061199195804}
   - component: {fileID: 3975773572888705729}
+  - component: {fileID: 3975773572888705731}
+  - component: {fileID: 3975773572888705730}
+  - component: {fileID: 3975773572888705732}
   m_Layer: 0
   m_Name: Worm1QueenLight
   m_TagString: Untagged
@@ -61032,7 +61005,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3975773572888705728}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3e0afa81151929e44b6e53da62b04f00, type: 3}
   m_Name: 
@@ -61049,6 +61022,51 @@ MonoBehaviour:
   - {fileID: 695878078}
   - {fileID: 1002701789}
   distance: 1
+--- !u!114 &3975773572888705730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3975773572888705728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4cc2fc6ff4db724b85b2f8eeb8f8150, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dark: 0
+  rb: {fileID: 3975773572888705731}
+  speed: 1
+--- !u!54 &3975773572888705731
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3975773572888705728}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
+--- !u!136 &3975773572888705732
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3975773572888705728}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.43817496
+  m_Height: 1.7013237
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.8506619, z: 0}
 --- !u!4 &3979633151459490560
 Transform:
   m_ObjectHideFlags: 0
@@ -61057,7 +61075,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3975773572888705728}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.9, y: 17.649998, z: -19.91}
+  m_LocalPosition: {x: -0.9, y: 18.8, z: -19.91}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -61121,6 +61139,9 @@ GameObject:
   - component: {fileID: 7275968372492478462}
   - component: {fileID: 7265230892509590434}
   - component: {fileID: 7243144327889845507}
+  - component: {fileID: 7243144327889845509}
+  - component: {fileID: 7243144327889845508}
+  - component: {fileID: 7243144327889845510}
   m_Layer: 0
   m_Name: Worm2QueenDark
   m_TagString: Untagged
@@ -61135,7 +61156,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7243144327889845506}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3e0afa81151929e44b6e53da62b04f00, type: 3}
   m_Name: 
@@ -61152,6 +61173,51 @@ MonoBehaviour:
   - {fileID: 1810876253}
   - {fileID: 340524129}
   distance: 1
+--- !u!54 &7243144327889845508
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7243144327889845506}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
+--- !u!114 &7243144327889845509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7243144327889845506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4cc2fc6ff4db724b85b2f8eeb8f8150, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dark: 1
+  rb: {fileID: 7243144327889845508}
+  speed: 11
+--- !u!136 &7243144327889845510
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7243144327889845506}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.43817496
+  m_Height: 1.7013237
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.8506619, z: 0}
 --- !u!4 &7246032120801692290
 Transform:
   m_ObjectHideFlags: 0
@@ -61160,7 +61226,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7243144327889845506}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -35.02, y: 17.649998, z: -21.07}
+  m_LocalPosition: {x: -35.02, y: 18.46, z: -21.07}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
